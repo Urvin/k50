@@ -1,0 +1,43 @@
+#!/usr/bin/env php
+<?php
+require_once (__DIR__ . '/app/autoload.php');
+
+$placesCount = 0;
+$objectsCount = 0;
+$filename = '';
+
+foreach ($argv as $k => $arg) {
+    switch ($k) {
+        case 1:
+            $placesCount = intval($arg);
+            break;
+        case 2:
+            $objectsCount = intval($arg);
+            break;
+        case 3:
+            $filename = $arg;
+            break;
+    }
+}
+
+try {
+    $lonelyAction = new \app\actions\SpreadAction();
+    $lonelyAction->run($placesCount, $objectsCount, $filename);
+} catch (\Throwable $e) {
+    $type = $e instanceof \Exception ? 'Exception' : 'Throwable';
+
+    echo
+    $type, ' \'' , get_class($e) , '\'  with message \'', $e->getMessage(),  '\'', PHP_EOL,
+    PHP_EOL,
+    'in ' , $e->getFile() , ':', $e->getLine(), PHP_EOL,
+    PHP_EOL,
+    'Stack trace:', PHP_EOL,
+    $e->getTraceAsString(), PHP_EOL;
+
+    exit(255);
+}
+
+
+
+
+
