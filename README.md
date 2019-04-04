@@ -1,5 +1,5 @@
-#K50 combination spreader
-##Task
+# K50 combination spreader
+## Task
 ```text
 Тестовое задание должно быть реализовано с использованием ООП. Использовать фреймфорк при этом не обязательно.
 
@@ -18,7 +18,7 @@ $ $ $ $ $ $ $ $ $ $  $  $  $  $  $  $  $  $
 Приветствуется самый быстрый и функциональный(оттестированный относительно входных данных) вариант.
 ```
 
-##Installation
+## Installation
 PHP 7.2 with BCMATH extension required at first
 
 ```bash
@@ -27,16 +27,16 @@ cd k50
 composer install
 ```
 
-##Usage
+## Usage
 ```bash
 php run {places_count} {objects_count} {output filename}
 ```
-###Example
+### Example
 ```bash
 php run 6 3 6x3.txt
 ```
 6x3.txt:
-```
+```text
 20
 ➀➀➀‿‿‿
 ➀➀‿➀‿‿
@@ -60,7 +60,6 @@ php run 6 3 6x3.txt
 ‿‿‿➀➀➀
 ```
 
-##Testing
+## Testing
 ```bash
 ./vendor/bin/phpunit
-```
